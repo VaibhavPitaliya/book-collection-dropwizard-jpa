@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7d30462-3283-4039-af27-ec58f37642b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BookCollection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -441,12 +441,12 @@
       <option name="number" value="Default" />
       <updated>1467750277781</updated>
       <workItem from="1467750287735" duration="1250000" />
-      <workItem from="1467751831443" duration="125000" />
+      <workItem from="1467751831443" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1375000" />
+    <option name="totallyTimeSpent" value="1449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
