@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac7c2a83-4cb1-4697-9396-1ea6861eafe0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/core/Author.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/core/Author.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/db/AuthorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/db/AuthorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/BookCollectionApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/BookCollectionApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/db/BookDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/db/BookDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java" />
-    </list>
+    <list default="true" id="ac7c2a83-4cb1-4697-9396-1ea6861eafe0" name="Default" comment="" />
     <ignored path="dropwizard-handson.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthorResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73170733">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#580#581#0" expanded="true" />
@@ -138,10 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookResource.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.31707317">
               <caret line="17" column="17" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#563#564#0" expanded="true" />
@@ -739,16 +732,16 @@
       <created>1467817332226</created>
       <option name="number" value="Default" />
       <updated>1467817332226</updated>
-      <workItem from="1467817337685" duration="6198000" />
+      <workItem from="1467817337685" duration="6341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6198000" />
+    <option name="totallyTimeSpent" value="6341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -937,9 +930,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.31707317">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#563#564#0" expanded="true" />
@@ -950,21 +958,6 @@
             <element signature="e#1017#1018#0" expanded="true" />
             <element signature="e#1139#1140#0" expanded="true" />
             <element signature="e#1193#1194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73170733">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
           </folding>
         </state>
       </provider>
