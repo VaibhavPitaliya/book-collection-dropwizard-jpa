@@ -1,9 +1,7 @@
 package com.flipkart.handsonlearning.resources;
 
 import com.flipkart.handsonlearning.core.Author;
-import com.flipkart.handsonlearning.core.Book;
 import com.flipkart.handsonlearning.db.AuthorDAO;
-import com.flipkart.handsonlearning.db.BookDAO;
 import com.google.common.base.Optional;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.LongParam;
@@ -15,36 +13,33 @@ import java.util.List;
 /**
  * Created by vaibhav.jain on 06/07/16.
  */
-@Path("/Author")
+@Path("/author")
 @Produces(MediaType.APPLICATION_JSON)
 public class AuthorResource {
 
-    private final AuthorDAO AuthorDAO;
-    private final BookDAO BookDAO;
+    private final AuthorDAO authorDAO;
 
-    public AuthorResource(AuthorDAO AuthorDAO, BookDAO bookDAO) {
-        this.AuthorDAO = AuthorDAO;
-        this.BookDAO = bookDAO;
+    public AuthorResource(AuthorDAO AuthorDAO) {
+        this.authorDAO = AuthorDAO;
     }
 
     @POST
     @UnitOfWork
     public long addAAuthor(Author Author) {
-        return AuthorDAO.add(Author);
+        return authorDAO.add(Author);
+    }
+
+    @GET
+    @Path("/all")
+    @UnitOfWork
+    public List<Author> listOfAuthors() {
+        return authorDAO.findAll();
     }
 
     @GET
     @Path("/{id}")
     @UnitOfWork
     public Optional<Author> getAuthorById(@PathParam("id") LongParam AuthorId) {
-        return AuthorDAO.findById(AuthorId.get());
+        return authorDAO.findById(AuthorId.get());
     }
-
-    @GET
-    @UnitOfWork
-    public List<Book> findBooksByAuthor(@QueryParam("name") Optional<String> name) {
-        return BookDAO.findBooksByAuthor(name);
-    }
-
-
 }

@@ -27,7 +27,7 @@ public class AuthorDAO extends AbstractDAO<Author> {
      * Method returns all the Authors stored in the database.
      */
     public List<Author> findAll() {
-        return list(namedQuery("find_all_Authors"));
+        return list(namedQuery("find_all_authors"));
     }
 
 

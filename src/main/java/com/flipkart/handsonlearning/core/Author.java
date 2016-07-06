@@ -13,6 +13,12 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@NamedQueries({
+        @NamedQuery(
+                name = "find_all_authors",
+                query = "SELECT b FROM Author b"
+        )
+})
 @Entity
 @Table(name = "author")
 public class Author {

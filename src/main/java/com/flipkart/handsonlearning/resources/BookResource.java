@@ -43,4 +43,11 @@ public class BookResource {
     public Optional<Book> getBookById(@PathParam("id") LongParam bookId) {
         return bookDAO.findById(bookId.get());
     }
+
+    @GET
+    @UnitOfWork
+    @Path("/author")
+    public List<Book> findBooksByAuthor(@QueryParam("name") String name) {
+        return bookDAO.findBooksByAuthor(name);
+    }
 }

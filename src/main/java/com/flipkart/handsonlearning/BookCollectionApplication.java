@@ -42,6 +42,6 @@ public class BookCollectionApplication extends Application<BookCollectionConfigu
         final BookDAO bookDAO = new BookDAO(hibernateBundle.getSessionFactory());
         final AuthorDAO authorDAO = new AuthorDAO(hibernateBundle.getSessionFactory());
         environment.jersey().register(new BookResource(bookDAO));
-        environment.jersey().register(new AuthorResource(authorDAO, bookDAO));
+        environment.jersey().register(new AuthorResource(authorDAO));
     }
 }

@@ -58,8 +58,8 @@ public class BookDAO extends AbstractDAO<Book> {
         return list(namedQuery("find_all_books"));
     }
 
-    public List<Book> findBooksByAuthor(Optional<String> name) {
-        return list(namedQuery("find_books_by_author").setParameter(String.valueOf(name),name));
+    public List<Book> findBooksByAuthor(String name) {
+        return list(namedQuery("find_books_by_author").setParameter(name,"CHIKU"));
     }
 
     public Book add(Book book) {
