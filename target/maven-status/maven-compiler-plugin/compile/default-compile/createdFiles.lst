@@ -1,0 +1,7 @@
+com/flipkart/handsonlearning/BookCollectionConfiguration.class
+com/flipkart/handsonlearning/core/Book.class
+com/flipkart/handsonlearning/resources/BookResource.class
+com/flipkart/handsonlearning/BookCollectionApplication$1.class
+com/flipkart/handsonlearning/BookCollectionApplication.class
+com/flipkart/handsonlearning/core/Author.class
+com/flipkart/handsonlearning/db/BookDAO.class

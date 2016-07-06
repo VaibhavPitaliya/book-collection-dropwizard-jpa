@@ -3,6 +3,8 @@ package com.flipkart.handsonlearning;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -10,16 +12,13 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by vaibhav.jain on 05/07/16.
  */
+@Getter
+@Setter
 public class BookCollectionConfiguration extends Configuration {
-
-        @Valid
-        @NotNull
-        private DataSourceFactory database = new DataSourceFactory();
-
-        @JsonProperty("database")
-        public DataSourceFactory getDataSourceFactory() {
-            return database;
-        }
+    @Valid
+    @NotNull
+    @JsonProperty("database")
+    private DataSourceFactory database = new DataSourceFactory();
 }
 
 

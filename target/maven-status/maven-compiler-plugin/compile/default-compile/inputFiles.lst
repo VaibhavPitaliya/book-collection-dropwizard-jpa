@@ -1,0 +1,8 @@
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/BookCollectionApplication.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/core/Book.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/resources/BookResource.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/core/Author.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/db/BookDAO.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/db/AuthorDAO.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/resources/AuthorResource.java
+/Users/vaibhav.jain/Testcode/book-collection-dropwizard-jpa/src/main/java/com/flipkart/handsonlearning/BookCollectionConfiguration.java

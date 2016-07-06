@@ -4,6 +4,7 @@ package com.flipkart.handsonlearning.resources;
 import com.flipkart.handsonlearning.core.Book;
 import com.flipkart.handsonlearning.db.BookDAO;
 import com.google.common.base.Optional;
+import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.LongParam;
 
 import javax.ws.rs.*;
@@ -24,19 +25,22 @@ public class BookResource {
     }
 
     @POST
-    public long addABook(Book book) {
+    @UnitOfWork
+    @Produces("application/json")
+    public Book addABook(Book book) {
         return bookDAO.add(book);
     }
 
     @GET
+    @UnitOfWork
     public List<Book> listOfBooks() {
         return bookDAO.findAll();
     }
 
     @GET
-    @Path("/{bookId}")
-
-    public Optional<Book> getBookById(@PathParam("bookId") LongParam bookId) {
+    @Path("/{id}")
+    @UnitOfWork
+    public Optional<Book> getBookById(@PathParam("id") LongParam bookId) {
         return bookDAO.findById(bookId.get());
     }
 }

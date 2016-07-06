@@ -1,8 +1,9 @@
 package com.flipkart.handsonlearning.core;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.Objects;
 
 /**
  * Created by vaibhav.jain on 05/07/16.
@@ -17,61 +18,34 @@ import java.util.Objects;
         ),
         @NamedQuery(
                 name = "find_book_by_id",
-                query = "SELECT b FROM Book b"
-                + "where b.id like :id ")
-//        @NamedQuery(
-//                name = "find_books_by_author",
-//                query = "SELECT b FROM Book b, Author a, Book_Author ba"
-//                + "where a.name like :name")
+                query = "SELECT b FROM Book b where b.id = :id"
+                 ),
+        @NamedQuery(
+                name = "find_books_by_author",
+                query = "SELECT b FROM Book b, Author a where b.author = a.id and a.name LIKE :name"
+        )
 })
-
+@Getter
+@Setter
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("BOOK_ID")
+    @Column(name = "book_id")
     private long id;
 
-    @Column(name = "ISBN", nullable = false)
+    @Column(name = "isbn", nullable = false)
     private long isbn;
 
-    @Column(name = "TITLE", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinTable(name="book_author",
-            joinColumns={@JoinColumn(name="BOOK_ID", referencedColumnName="BOOK_ID")},
-            inverseJoinColumns={@JoinColumn(name="AUTHOR_ID", referencedColumnName="AUTHOR_ID")})
+    @JoinColumn(name = "author_id")
     private Author author;
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+//    @OneToOne(cascade=CascadeType.ALL)
+//    @JoinTable(name="book_author",
+//            joinColumns={@JoinColumn(name="BOOK_ID", referencedColumnName="BOOK_ID")},
+//            inverseJoinColumns={@JoinColumn(name="AUTHOR_ID", referencedColumnName="AUTHOR_ID")})
+//    private Author author;
 }

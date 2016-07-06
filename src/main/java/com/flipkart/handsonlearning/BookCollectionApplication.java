@@ -1,7 +1,10 @@
 package com.flipkart.handsonlearning;
 
+import com.flipkart.handsonlearning.core.Author;
 import com.flipkart.handsonlearning.core.Book;
+import com.flipkart.handsonlearning.db.AuthorDAO;
 import com.flipkart.handsonlearning.db.BookDAO;
+import com.flipkart.handsonlearning.resources.AuthorResource;
 import com.flipkart.handsonlearning.resources.BookResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
@@ -18,10 +21,10 @@ public class BookCollectionApplication extends Application<BookCollectionConfigu
     }
 
     private final HibernateBundle<BookCollectionConfiguration> hibernateBundle =
-            new HibernateBundle<BookCollectionConfiguration>(Book.class) {
+            new HibernateBundle<BookCollectionConfiguration>(Book.class, Author.class) {
                 @Override
                 public DataSourceFactory getDataSourceFactory(BookCollectionConfiguration configuration) {
-                    return configuration.getDataSourceFactory();
+                    return configuration.getDatabase();
                 }
             };
 
@@ -36,7 +39,9 @@ public class BookCollectionApplication extends Application<BookCollectionConfigu
 
     @Override
     public void run(BookCollectionConfiguration configuration, Environment environment) {
-        final BookDAO dao = new BookDAO(hibernateBundle.getSessionFactory());
-        environment.jersey().register(new BookResource(dao));
+        final BookDAO bookDAO = new BookDAO(hibernateBundle.getSessionFactory());
+        final AuthorDAO authorDAO = new AuthorDAO(hibernateBundle.getSessionFactory());
+        environment.jersey().register(new BookResource(bookDAO));
+        environment.jersey().register(new AuthorResource(authorDAO, bookDAO));
     }
 }

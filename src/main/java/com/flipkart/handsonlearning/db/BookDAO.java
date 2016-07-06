@@ -28,6 +28,7 @@ import com.google.common.base.Optional;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
 import java.util.List;
 
 /**
@@ -40,10 +41,14 @@ public class BookDAO extends AbstractDAO<Book> {
      *
      * @param sessionFactory Hibernate session factory.
      */
+
+    private SessionFactory sessionFactory;
+
+    @Inject
     public BookDAO(SessionFactory sessionFactory) {
         super(sessionFactory);
+        this.sessionFactory = sessionFactory;
     }
-
 
 
     /**
@@ -53,14 +58,20 @@ public class BookDAO extends AbstractDAO<Book> {
         return list(namedQuery("find_all_books"));
     }
 
-    public long add(Book book) {
-        return persist(book).getId();
+    public List<Book> findBooksByAuthor(Optional<String> name) {
+        return list(namedQuery("find_books_by_author").setParameter(String.valueOf(name),name));
+    }
+
+    public Book add(Book book) {
+        persist(book);
+        System.out.println(book.getAuthor().getName());
+        return book;
     }
 
     /**
-     * Method looks for an employee by her id.
+     * Method looks for an employee by her authorId.
      *
-     * @param id the id of an employee we are looking for.
+     * @param id the authorId of an employee we are looking for.
      * @return Optional containing the found employee or an empty Optional
      * otherwise.
      */

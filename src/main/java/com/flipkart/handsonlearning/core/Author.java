@@ -1,27 +1,29 @@
 package com.flipkart.handsonlearning.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by vaibhav.jain on 05/07/16.
  */
 
+
+@Getter
+@Setter
 @Entity
 @Table(name = "author")
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("AUTHOR_ID")
+    @JsonProperty("author_id")
+    @Column(name = "author_id")
     private long id;
 
-    @Column(name = "AUTHOR_NAME", nullable = false)
+    @Column(name = "author_name", nullable = false)
+    @JsonProperty("name")
     private String name;
 
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="book_author",
-            joinColumns={@JoinColumn(name="AUTHOR_ID", referencedColumnName="AUTHOR_ID")},
-            inverseJoinColumns={@JoinColumn(name="BOOK_ID", referencedColumnName="BOOK_ID")})
-    private List<Book> bookList;
 }
