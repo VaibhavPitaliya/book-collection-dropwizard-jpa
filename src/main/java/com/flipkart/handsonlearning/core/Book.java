@@ -1,5 +1,8 @@
 package com.flipkart.handsonlearning.core;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,6 +30,7 @@ import javax.persistence.*;
 })
 @Getter
 @Setter
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +43,7 @@ public class Book {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @ManyToOne(optional = false, cascade = {CascadeType.ALL})
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 //    @OneToOne(cascade=CascadeType.ALL)

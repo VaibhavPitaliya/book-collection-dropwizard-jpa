@@ -1,6 +1,9 @@
 package com.flipkart.handsonlearning.core;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,8 +16,7 @@ import java.util.List;
  */
 
 
-@Getter
-@Setter
+
 @NamedQueries({
         @NamedQuery(
                 name = "find_all_authors",
@@ -23,6 +25,9 @@ import java.util.List;
 })
 @Entity
 @Table(name = "author")
+@Getter
+@Setter
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +38,6 @@ public class Author {
     @JsonProperty("name")
     private String name;
 
-    @OneToMany(cascade=CascadeType.ALL, mappedBy = "author")
-    private List<Book> book = new ArrayList<>();
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "author", fetch = FetchType.EAGER)
+    private List<> book;
 }

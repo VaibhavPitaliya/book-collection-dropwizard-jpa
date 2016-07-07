@@ -24,7 +24,7 @@ public class BookCollectionApplication extends Application<BookCollectionConfigu
             new HibernateBundle<BookCollectionConfiguration>(Book.class, Author.class) {
                 @Override
                 public DataSourceFactory getDataSourceFactory(BookCollectionConfiguration configuration) {
-                    return configuration.getDatabase();
+                    return configuration.getDataSourceFactory();
                 }
             };
 
