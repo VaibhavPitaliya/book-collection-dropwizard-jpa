@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by vaibhav.jain on 05/07/16.
@@ -24,7 +26,6 @@ import javax.persistence.*;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("author_id")
     @Column(name = "author_id")
     private long id;
 
@@ -32,4 +33,6 @@ public class Author {
     @JsonProperty("name")
     private String name;
 
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "author")
+    private List<Book> book = new ArrayList<>();
 }

@@ -39,8 +39,8 @@ public class Book {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
 //    @OneToOne(cascade=CascadeType.ALL)
