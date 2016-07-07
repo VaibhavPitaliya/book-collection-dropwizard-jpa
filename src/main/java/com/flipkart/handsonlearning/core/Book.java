@@ -22,7 +22,7 @@ import javax.persistence.*;
                  ),
         @NamedQuery(
                 name = "find_books_by_author",
-                query = "SELECT b FROM Book b, Author a where b.author = a.id and a.name LIKE :name"
+                query = "SELECT b FROM Book b, Author a where b.author = a.id and a.name LIKE :authorname"
         )
 })
 @Getter
